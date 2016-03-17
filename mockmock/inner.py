@@ -1,6 +1,7 @@
-import myconst
+# this will break the test that assumes myconst.get_db_name is called
+from myconst import get_db_name
 
 def functio():
-    return myconst.get_db_name()
+    return get_db_name()
 
 print "inner:", functio()
