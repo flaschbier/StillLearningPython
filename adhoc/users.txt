@@ -1,0 +1,22 @@
+{
+"email": "hayleigh67@yahoo.com",
+"money": 563343,
+"products": [
+  22177430599,
+  39739352147
+],
+"name": "Samantha Contreras",
+"pass": "80Y8O9h",
+"user": "scontreras",
+"record": "-"      } ,
+
+  {
+"email": "plangworth@gmail.com",
+"money": 476528,
+"producs": [
+  92874965275
+],
+"name": "Arthur Farias",
+"pass": "3eM2LP",
+"user": "afarias",
+"record": "-"      }
