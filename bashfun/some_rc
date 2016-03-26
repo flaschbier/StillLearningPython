@@ -1,0 +1,12 @@
+
+proxy+() {
+    export PROXY=proxy
+}
+
+proxy-() {
+    export PROXY=
+}
+
+proxy?() {
+    echo "$PROXY"
+}
