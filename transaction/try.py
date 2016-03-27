@@ -26,13 +26,15 @@ def select():
         rows = conn2.cursor().execute(sql).fetchall()
     print "   other connection sees", rows
 
-def count():
+def up():
     print "counting up"
     cur.execute('update "mytable" set data = data + 1 where "id" = ?', (rowid,))
+    select()
 
 def commit():
     print "commit"
     conn.commit()
+    select()
 
 # now the script
 fresh_db()
@@ -44,23 +46,10 @@ with sqlite3.connect(_DBPATH) as conn:
     rowid = cur.lastrowid
     print "rowid =", rowid
     commit()
-    select()
     print "--- two consecutive w/o commit"
-    count()
-    select()
-    count()
-    select()
-    commit()
-    select()
+    up(); up(); commit()
     print "--- two consecutive with commit"
-    count()
-    select()
-    commit()
-    select()
-    count()
-    select()
-    commit()
-    select()
+    up(); commit(); up(); commit()
 
 
 """
